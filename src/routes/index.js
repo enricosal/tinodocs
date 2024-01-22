@@ -8,6 +8,7 @@ import Product from '../pages/product';
 import Auth from '../pages/auth';
 import Register from '../pages/register';
 import Limit from '../pages/limit';
+import Faq from '../pages/faq';
 
 export const Routes = () => {
   const location = useLocation()
@@ -20,6 +21,7 @@ export const Routes = () => {
         <Route exact path='/auth' component={ Auth } />
         <Route exact path='/register' component={ Register } />
         <Route exact path='/limit' component={ Limit } />
+        <Route exact path='/faq' component={ Faq } />
       </Switch>
   )
 }
