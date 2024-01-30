@@ -68,7 +68,7 @@ export const CodeBlock = styled.div`
 
     border: 2px solid #2C2E39;
 
-    border-radius: 6px;
+    border-radius: 3px;
 
     padding: 1rem;
 
@@ -76,7 +76,7 @@ export const CodeBlock = styled.div`
 
     flex-direction: column;
 
-    width: 80%;
+    width: 55vw;
 
 .header{
     display: flex;
@@ -138,6 +138,12 @@ export const CodeBlock = styled.div`
         margin-bottom: 0rem;
 
         font-weight: 600;
+    }
+
+    .request-description{
+        font-size: 12px;
+
+        font-weight: 300;
     }
 
     .parameters-area{
@@ -254,6 +260,8 @@ export const CodeBlock = styled.div`
 
                 flex-direction: column;
 
+                width: 25vw;
+
                 h1{
                 font-weight: 300;
 
@@ -268,9 +276,9 @@ export const CodeBlock = styled.div`
 
                     color: #fff;
 
-                    width: 400px;
-
                     line-height: 24px;
+
+                    margin-left: -2rem;
                 }
             }
         }

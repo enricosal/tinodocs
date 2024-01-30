@@ -8,10 +8,12 @@ import { MdCircle } from "react-icons/md";
 
 export default function Register() {
     const [status, setStatus] = useState(false);
+    const [status2, setStatus2] = useState(false);
     const [parameterStatus, setParameterStatus] = useState(false);
     const [parameterStatus2, setParameterStatus2] = useState(false);
     const [parameterStatus3, setParameterStatus3] = useState(false);
     const [type, setType] = useState('POST');
+    const [type2, setType2] = useState('GET');
 
     if(type === 'POST'){
         var color = '#006623'
@@ -19,10 +21,10 @@ export default function Register() {
         var color = '#2F7F98'
     }
 
-    if(type === 'POST'){
-        var color = '#006623'
-    }else if(type === 'GET'){
-        var color = '#2F7F98'
+    if(type2 === 'POST'){
+        var color2 = '#006623'
+    }else if(type2 === 'GET'){
+        var color2 = '#2F7F98'
     }
 
     const exemploJSON = `
@@ -454,6 +456,255 @@ export default function Register() {
             </CodeBlock>
 
             <p style={{ margin: 0 }}>Caso exista o interesse do fornecedor saber se o lojista está apto à transacionar com o Tino, muitas vezes uma informação que para a venda assistida é fundamental, temos um end-point que retorna o status desse lojista. Mais detalhes a respeito do fluxo de venda assistida com o Tino será detalhado em Link de Pagamento.</p>
+
+            <CodeBlock>
+                <div className="header">
+                    {status2 === true ? 
+                    (<FiChevronDown size={24} color="#fff" onClick={() => setStatus2(!status2)}/>
+                    ) : (
+                        <FiChevronRight size={24} color="#fff" onClick={() => setStatus2(!status2)}/>
+                    )}
+
+                    <div className="request" style={{ backgroundColor: `${color2}` }}>
+                        <h1>{type2}</h1>
+                    </div>
+
+                    <h1 className="url">https://supplier-api.truepay.app/<span style={{ fontWeight: 600 }}>v1/merchants/{`{documentNumber}`}</span></h1>
+                </div>
+
+                <h1 className="description">Verifica se o lojista está apto para usar o Tino // Verify if the merchant is able to use Tino</h1>
+
+                {status2 == true && (
+                    <div className="code-area">
+                        <h1 className="request-description">Verifica se o lojista está apto para usar o Tino. Não é utilizado para validação pré-compra ou geração de link de pagamento. Pode ser utilizado em algum outro ponto da jornada do lojista, como uma validação após análise de crédito.</h1>
+                        <h1 className="request-description">--</h1>
+                        <h1 className="request-description">Checks whether the merchant is able to use Tino. It is not used for pre-purchase validation or payment link generation. It can be used at any other check-point in the retailer's journey, such as validation after credit analysis.</h1>
+                    
+                        <p className="titlep" style={{ marginTop: '2rem' }}>Parameters</p>
+
+                        <div className="parameters-area">
+                            <h1 className="body-title">Body</h1>
+
+                            <div className="parameter-section">
+                                    <h1 className="parameter-title">documentNumber*</h1>
+                            
+                                    <h1 style={{ marginLeft: '6.25rem' }} className="parameter-type">String</h1>
+                            
+                                    <div className="description-parameter">
+                                        <h1>
+                                            CNPJ do lojista. Deve conter apenas os números e, se tiver 0s no início, informar eles também.
+                                        </h1>
+
+                                        <h1>
+                                            --
+                                        </h1>
+
+                                        <h1>
+                                            Merchant's document number (CNPJ). It must only contain numbers and if there are 0s at the beginning, inform them as well.
+                                        </h1>
+                                    </div>
+                            </div>
+
+                            <div className="divider" style={{width: '95%'}}>
+                                .
+                            </div>
+
+                            <p className="titlep">Responses</p>
+
+                            <div className="error-area">
+                                <div className="error-section">
+                                    <div className="error-code">
+                                        <MdCircle size={9} color="green"/>
+                                        <h1>200: OK</h1>
+                                    </div>
+
+                                    <div className="description-error">
+                                            <h1>
+                                                Detalhes do lojista.
+                                            </h1>
+
+                                            <h1>
+                                                --
+                                            </h1>
+
+                                            <h1>
+                                                Merchant details.
+                                            </h1>
+                                        </div>
+                                </div>
+
+                                <div className="divider" style={{width: '95%'}}>
+                                    .
+                                </div>
+
+                                <div className="error-section">
+                                    <div className="error-code">
+                                        <MdCircle size={9} color="orange"/>
+                                        <h1>400: Bad Request</h1>
+                                    </div>
+
+                                    <div className="description-error">
+                                        <h1>
+                                            Api-Token inválido.
+                                        </h1>
+
+                                        <h1>
+                                            --
+                                        </h1>
+
+                                        <h1>
+                                            Invalid API-Token.
+                                        </h1>
+                                    </div>
+                                </div>
+
+                                <div className="divider" style={{width: '95%'}}>
+                                    .
+                                </div>
+
+                                <div className="error-section">
+                                    <div className="error-code">
+                                        <MdCircle size={9} color="orange"/>
+                                        <h1>401: Unathorized</h1>
+                                    </div>
+
+                                    <div className="description-error">
+                                            <h1>
+                                                Api-Token válido, mas não reconhecido.
+                                            </h1>
+
+                                            <h1>
+                                                --
+                                            </h1>
+
+                                            <h1>
+                                                Api-Token is valid but not recognized.
+                                            </h1>
+                                    </div>
+                                </div>
+
+                                <div className="divider" style={{width: '95%'}}>
+                                    .
+                                </div>
+
+                                <div className="error-section">
+                                    <div className="error-code">
+                                        <MdCircle size={9} color="red"/>
+                                        <h1>500: Internal Server Error</h1>
+                                    </div>
+
+                                    <div className="description-error">
+                                            <h1>
+                                                Erro interno.
+                                            </h1>
+
+                                            <h1>
+                                                --
+                                            </h1>
+
+                                            <h1>
+                                                Internal error.
+                                            </h1>
+                                    </div>
+                                </div>
+
+                            </div>
+                                                            <p className="titlep">Responses</p>
+
+                        <div className="error-area">
+                            <div className="error-section">
+                                <div className="error-code">
+                                    <MdCircle size={9} color="green"/>
+                                    <h1>200: OK</h1>
+                                </div>
+
+                                <div className="description-error">
+                                        <h1>
+                                            Status de confirmação que o lojista foi criado.
+                                        </h1>
+
+                                        <h1>
+                                            --
+                                        </h1>
+
+                                        <h1>
+                                            Confirmation status that the merchant was created.
+                                        </h1>
+                                    </div>
+                            </div>
+
+                            <div className="divider" style={{width: '95%'}}>
+                                .
+                            </div>
+
+                            <div className="error-section">
+                                <div className="error-code">
+                                    <MdCircle size={9} color="orange"/>
+                                    <h1>400: Bad Request</h1>
+                                </div>
+
+                                <div className="description-error">
+                                    <pre>
+                                        {exemploJSON2}
+                                    </pre>
+                                </div>
+                            </div>
+
+                            <div className="divider" style={{width: '95%'}}>
+                                .
+                            </div>
+
+                            <div className="error-section">
+                                <div className="error-code">
+                                    <MdCircle size={9} color="orange"/>
+                                    <h1>401: Unathorized</h1>
+                                </div>
+
+                                <div className="description-error">
+                                        <h1>
+                                            Api-Token válido, mas não reconhecido.
+                                        </h1>
+
+                                        <h1>
+                                            --
+                                        </h1>
+
+                                        <h1>
+                                            Api-Token is valid but not recognized.
+                                        </h1>
+                                </div>
+                            </div>
+
+                            <div className="divider" style={{width: '95%'}}>
+                                .
+                            </div>
+
+                            <div className="error-section">
+                                <div className="error-code">
+                                    <MdCircle size={9} color="red"/>
+                                    <h1>500: Internal Server Error</h1>
+                                </div>
+
+                                <div className="description-error">
+                                        <h1>
+                                            Erro interno.
+                                        </h1>
+
+                                        <h1>
+                                            --
+                                        </h1>
+
+                                        <h1>
+                                            Internal error.
+                                        </h1>
+                                </div>
+                            </div>
+
+                        </div>
+                        </div>
+                    </div>
+                )}
+            </CodeBlock>
         </div>
     </Container>
  );
