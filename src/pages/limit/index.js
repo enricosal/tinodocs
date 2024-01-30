@@ -1,12 +1,23 @@
-import React from "react";
-import { Container } from "./styles";
+import React, {useState} from "react";
+import { Container, CodeBlock } from "./styles";
 
 import Iframe from 'react-iframe'
 
 import SideBar from "../../Components/SideBar";
-import CodeBlock from "../../Components/CodeBlock";
+
+import { FiChevronRight, FiChevronDown } from "react-icons/fi";
+import { MdCircle } from "react-icons/md";
 
 export default function Limit() {
+    const [status, setStatus] = useState(false);
+    const [type, setType] = useState('GET');
+
+    if(type === 'POST'){
+        var color = '#006623'
+    }else if(type === 'GET'){
+        var color = '#2F7F98'
+    }
+
  return (
     <Container>
         <SideBar/>
@@ -35,10 +46,162 @@ export default function Limit() {
             
             <p>O fornecedor não tem nenhuma ação na criação da reserva de limite. A própria conclusão da compra gera a reserva no Tino. Retornarmos com um Webhook confirmando a reserva.</p>
 
-            <CodeBlock 
-            type={'GET'} 
-            url={'v2/limit-reservations/{externalId}'}
-            description={'Busca de reservas de limite // Limit reservations search'}/>
+            <CodeBlock>
+                <div className="header">
+                    {status === true ? 
+                    (<FiChevronDown size={24} color="#fff" onClick={() => setStatus(!status)}/>
+                    ) : (
+                        <FiChevronRight size={24} color="#fff" onClick={() => setStatus(!status)}/>
+                    )}
+
+                    <div className="request" style={{ backgroundColor: `${color}` }}>
+                        <h1>{type}</h1>
+                    </div>
+
+                    <h1 className="url">https://supplier-api.truepay.app/<span style={{ fontWeight: 600 }}>/v2/limit-reservations/{`{externalId}`}</span></h1>
+                </div>
+
+                <h1 className="description">Busca de reservas de limite // Limit reservations search</h1>
+
+                {status == true && (
+                    <div className="code-area">
+                        <h1 className="request-description">Busca de reserva de limite. Poderá ser usado pelo e-commerce logo após receber uma mensagem do webhook para o evento payment_reservation_created. É um passo necessário por segurança, assim a plataforma garante que, de fato, a reserva foi criada no Tino.</h1>
+                        <h1 className="request-description">--</h1>
+                        <h1 className="request-description">Get a list of limit reservations. It can be used by e-commerce after receiving a message from webhook for payment_reservation_created event. It's a necessary step for security reasons, that way the platform guarantees that, in fact, the provision was done in Tino.</h1>
+                    
+                        <p className="titlep" style={{ marginTop: '2rem' }}>Parameters</p>
+
+                        <div className="parameters-area">
+                            <h1 className="body-title">Body</h1>
+
+                            <div className="parameter-section">
+                                    <h1 className="parameter-title">externalId*</h1>
+                            
+                                    <h1 style={{ marginLeft: '6.25rem' }} className="parameter-type">String</h1>
+                            
+                                    <div className="description-parameter">
+                                        <h1>
+                                            ID do pedido cadastrado pelo fornecedor, normalmente gerado no ERP. Para reserva de limite é uma informação obrigatória.
+                                        </h1>
+
+                                        <h1>
+                                            --
+                                        </h1>
+
+                                        <h1>
+                                            Order ID (External ID) registered by the supplier (usually generated in the ERP). This is a required information for limit reservation.
+                                        </h1>
+                                    </div>
+                            </div>
+
+                            <div className="divider" style={{width: '95%'}}>
+                                .
+                            </div>
+
+                            <p className="titlep">Responses</p>
+
+                            <div className="error-area">
+                                <div className="error-section">
+                                    <div className="error-code">
+                                        <MdCircle size={9} color="green"/>
+                                        <h1>200: OK</h1>
+                                    </div>
+
+                                    <div className="description-error">
+                                            <h1>
+                                                Lista de reservas de limite.
+                                            </h1>
+
+                                            <h1>
+                                                --
+                                            </h1>
+
+                                            <h1>
+                                                List of limit reservations.
+                                            </h1>
+                                        </div>
+                                </div>
+
+                                <div className="divider" style={{width: '95%'}}>
+                                    .
+                                </div>
+
+                                <div className="error-section">
+                                    <div className="error-code">
+                                        <MdCircle size={9} color="orange"/>
+                                        <h1>400: Bad Request</h1>
+                                    </div>
+
+                                    <div className="description-error">
+                                        <h1>
+                                            Api-Token inválido.
+                                        </h1>
+
+                                        <h1>
+                                            --
+                                        </h1>
+
+                                        <h1>
+                                            Invalid API-Token.
+                                        </h1>
+                                    </div>
+                                </div>
+
+                                <div className="divider" style={{width: '95%'}}>
+                                    .
+                                </div>
+
+                                <div className="error-section">
+                                    <div className="error-code">
+                                        <MdCircle size={9} color="orange"/>
+                                        <h1>401: Unathorized</h1>
+                                    </div>
+
+                                    <div className="description-error">
+                                            <h1>
+                                                Api-Token válido, mas não reconhecido.
+                                            </h1>
+
+                                            <h1>
+                                                --
+                                            </h1>
+
+                                            <h1>
+                                                Api-Token is valid but not recognized.
+                                            </h1>
+                                    </div>
+                                </div>
+
+                                <div className="divider" style={{width: '95%'}}>
+                                    .
+                                </div>
+
+                                <div className="error-section">
+                                    <div className="error-code">
+                                        <MdCircle size={9} color="red"/>
+                                        <h1>500: Internal Server Error</h1>
+                                    </div>
+
+                                    <div className="description-error">
+                                            <h1>
+                                                Erro interno.
+                                            </h1>
+
+                                            <h1>
+                                                --
+                                            </h1>
+
+                                            <h1>
+                                                Internal error.
+                                            </h1>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                )}
+            </CodeBlock>
         </div>
     </Container>
  );
