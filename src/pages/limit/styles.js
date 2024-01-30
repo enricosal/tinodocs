@@ -5,6 +5,15 @@ export const Container = styled.div`
 
     flex-direction: row;
 
+    .divider{
+            width: 55vw;
+            height: 2px;
+
+            background-color: #2C2E39;
+
+            margin: 1rem 0;
+        }
+
     .content-area{
         display: flex;
 
