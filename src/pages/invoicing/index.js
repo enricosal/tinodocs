@@ -69,6 +69,20 @@ export default function Invoicing() {
     not found |
     `;
 
+    const exemploJSON4 = `
+    {
+        "lastBatch": true​,
+        "nfes": [
+          {
+            "data": "PD94bWwgdmVyc2l...== (base64)",
+            "amountCents": 43500,
+            "externalId": "20220825-2",
+            "notes": "This is a note."
+          }
+        ]
+    }
+    `;
+
  return (
     <Container>
         <SideBar/>
@@ -438,7 +452,7 @@ export default function Invoicing() {
                                         </h1>
 
                                         <h1>
-                                            Previously created limit provision ID
+                                            Previously created limit provision ID.
                                         </h1>
                                     </div>
                             </div>
@@ -448,11 +462,11 @@ export default function Invoicing() {
                             <div className="parameter-section">
                                     <h1 className="parameter-title">lastBatch*</h1>
                             
-                                    <h1 style={{ marginLeft: '9.5rem' }} className="parameter-type">String</h1>
+                                    <h1 style={{ marginLeft: '9.5rem' }} className="parameter-type">Boolean</h1>
                             
                                     <div className="description-parameter">
                                         <h1>
-                                            ID identificador da reserva de limite criada anteriormente.
+                                            Informa se essa chamada representa o envio da última nota-fiscal.
                                         </h1>
 
                                         <h1>
@@ -460,7 +474,7 @@ export default function Invoicing() {
                                         </h1>
 
                                         <h1>
-                                            Previously created limit provision ID
+                                            Informs whether this call represents the sending of the last invoice.
                                         </h1>
                                     </div>
                             </div>
@@ -585,7 +599,7 @@ export default function Invoicing() {
 
                             <div className="code-example">
                                 <pre>
-                                    {exemploJSON}
+                                    {exemploJSON4}
                                 </pre>
                             </div>
 
