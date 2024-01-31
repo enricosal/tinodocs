@@ -58,7 +58,7 @@ export default function Limit() {
                         <h1>{type}</h1>
                     </div>
 
-                    <h1 className="url">https://supplier-api.truepay.app/<span style={{ fontWeight: 600 }}>/v2/limit-reservations/{`{externalId}`}</span></h1>
+                    <h1 className="url">https://supplier-api.truepay.app/<span style={{ fontWeight: 600 }}>v2/limit-reservations/{`{externalId}`}</span></h1>
                 </div>
 
                 <h1 className="description">Busca de reservas de limite // Limit reservations search</h1>

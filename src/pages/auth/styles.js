@@ -94,7 +94,7 @@ export const Container = styled.div`
 
             margin-top: 2.5rem;
 
-            margin-bottom: 1rele;
+            margin-bottom: 1rem;
 
             img{
                 width: 48.2vw;

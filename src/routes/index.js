@@ -9,6 +9,7 @@ import Auth from '../pages/auth';
 import Register from '../pages/register';
 import Limit from '../pages/limit';
 import Faq from '../pages/faq';
+import Invoicing from '../pages/invoicing';
 
 export const Routes = () => {
   const location = useLocation()
@@ -22,6 +23,7 @@ export const Routes = () => {
         <Route exact path='/register' component={ Register } />
         <Route exact path='/limit' component={ Limit } />
         <Route exact path='/faq' component={ Faq } />
+        <Route exact path='/billing' component={ Invoicing } />
       </Switch>
   )
 }
