@@ -15,7 +15,7 @@ export const Container = styled.div`
         h1{
             font-size: 13px;
             font-style: normal;
-            font-weight: 400;
+            font-weight: 300;
 
             padding-left: .5rem;
         }

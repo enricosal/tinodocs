@@ -10,6 +10,7 @@ import Register from '../pages/register';
 import Limit from '../pages/limit';
 import Faq from '../pages/faq';
 import Invoicing from '../pages/invoicing';
+import Edit from '../pages/edit'
 
 export const Routes = () => {
   const location = useLocation()
@@ -24,6 +25,7 @@ export const Routes = () => {
         <Route exact path='/limit' component={ Limit } />
         <Route exact path='/faq' component={ Faq } />
         <Route exact path='/billing' component={ Invoicing } />
+        <Route exact path='/edit' component={Edit} />
       </Switch>
   )
 }
