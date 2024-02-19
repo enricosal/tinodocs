@@ -79,15 +79,17 @@ export default function Link() {
 
             <h2 className="subTitle">Tino para compras assistidas.</h2>
 
-            <p style={{ marginTop: '.5rem' }}>A segunda opção do cliente ter acesso à experiência de compra do Tino seria através da geração de um Link de Pagamento a ser enviado para o lojista no WhatsApp.</p>
+            <p style={{ marginTop: '.5rem' }}>A segunda alternativa para que o cliente tenha acesso à experiência de compra do Tino consiste na geração de um Link de Pagamento, o qual será enviado ao lojista por meio do WhatsApp.</p>
 
-            <p style={{ marginTop: '.5rem' }}>O fluxo de envio do Link de Pagamento deve ser integrado ao processo de vendas do fornecedor. Seja através de telemarketing, agentes ou representantes comerciais, o fornecedor poderá disponibilizar o Tino como uma opção de pagamento.</p>
+            <p style={{ marginTop: '.5rem' }}>A integração do fluxo de envio do Link de Pagamento deve ser realizada no âmbito do processo de vendas do fornecedor. Seja por intermédio de telemarketing, agentes ou representantes comerciais, o fornecedor tem a possibilidade de oferecer o Tino como uma modalidade de pagamento.</p>
 
-            <p style={{ marginTop: '.5rem' }}>A partir do momento que o lojista escolher utilizar a solução de compra e pagamento do Tino, o fornecedor irá nos enviar uma solicitação de envio do Link de Pagamento. Após receber essa solicitação, o Tino irá enviar o link ao lojista através do WhatsApp informado.</p>
+            <p style={{ marginTop: '.5rem' }}>Assim que o lojista optar por utilizar a solução de compra e pagamento do Tino, o fornecedor enviará uma solicitação para a emissão do Link de Pagamento. Após o recebimento dessa solicitação, o Tino encaminhará o link ao lojista por meio do WhatsApp previamente fornecido.</p>
 
-            <p style={{ marginTop: '.5rem' }}>Ao acessar o Link de Pagamento, o lojista terá acesso à página onde poderá escolher seu plano de pagamento e finalizar a sua compra. Vale destacar que, independentemente da forma como o cliente acessa (seja via SDK ou via Link de Pagamento), a experiência de compra é a mesma.</p>
+            <p style={{ marginTop: '.5rem' }}>Ao acessar o Link de Pagamento, o lojista será direcionado a uma página na qual poderá selecionar seu plano de pagamento e concluir a transação. O Tino confirma a transação via webhook para o fornecedor.</p>
 
-            <p style={{ marginTop: '.5rem' }}>Abaixo, um exemplo de como esse fluxo funcionaria através de uma venda assistida:</p>
+            <p style={{ marginTop: '.5rem' }}>Importante ressaltar que, independentemente da forma como o cliente acessa (seja por meio do SDK ou do Link de Pagamento), a experiência de compra permanece inalterada.</p>
+
+            <p style={{ marginTop: '.5rem' }}>A seguir, apresentamos um exemplo de como esse processo se desenrolaria concretiza numa venda assistida:</p>
 
             <img src={linkflux}/>
 
