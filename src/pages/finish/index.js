@@ -3,6 +3,7 @@ import { Container } from "./styles";
 import SideBar from "../../Components/SideBar";
 
 import warnreser from '../../assets/warnreser.png'
+import warnfin from '../../assets/warnfin.png'
 
 export default function Finish() {
  return (
@@ -47,6 +48,8 @@ export default function Finish() {
             <div className="code-area">
                 <h2><text>https://sua-loja.com.br/compra/sucesso?reservationId=53ec5a08-c30e-41b8-949e-fa39dca1572b&externalId=order-19544</text></h2>
             </div>
+
+            <img src={warnfin}/>
         </div>
     </Container>
  );

@@ -6,6 +6,7 @@ import { Container } from "./styles";
 import warnQuality from '../../assets/warnquality.png'
 
 import { FiChevronDown, FiChevronUp } from "react-icons/fi";
+import { MdCheckBoxOutlineBlank } from "react-icons/md";
 
 export default function Quality() {
     const [status, setStatus] = useState(false);
@@ -37,6 +38,38 @@ export default function Quality() {
 
                     <h1 className="url">Integração via SDK</h1>
                 </div>
+
+                {status === true && 
+                <div className="list-area"> 
+                    <div className="item">
+                        <MdCheckBoxOutlineBlank size={20} color="grey"/>
+                        <h1>Integrar com API de Novos Cadastros</h1>
+                    </div>
+                    <div className="item">
+                        <MdCheckBoxOutlineBlank size={20} color="grey"/>
+                        <h1>Integrar com SDK do CompraTino</h1>
+                    </div>
+                    <div className="item">
+                        <MdCheckBoxOutlineBlank size={20} color="grey"/>
+                        <h1>Endpoint de Cancelamento de Reserva</h1>
+                    </div>
+                    <div className="item">
+                        <MdCheckBoxOutlineBlank size={20} color="grey"/>
+                        <h1>Endpoint de busca de Reserva de Limite (opcional)</h1>
+                    </div>
+                    <div className="item">
+                        <MdCheckBoxOutlineBlank size={20} color="grey"/>
+                        <h1>Endpoint de envio da Nota Fiscal / Faturamento</h1>
+                    </div>
+                    <div className="item">
+                        <MdCheckBoxOutlineBlank size={20} color="grey"/>
+                        <h1>Endpoint de Edição de Invoice</h1>
+                    </div>
+                    <div className="item">
+                        <MdCheckBoxOutlineBlank size={20} color="grey"/>
+                        <h1>Endpoint de envio da Nota Fiscal / Faturamento</h1>
+                    </div>
+                </div>}
             </div>
 
             <div className="list">
@@ -45,10 +78,9 @@ export default function Quality() {
                     (<FiChevronDown size={24} color="#fff" onClick={() => setStatus2(!status2)}/>
                     ) : (
                     <FiChevronUp size={24} color="#fff" onClick={() => setStatus2(!status2)}/>
-                    )}
+                )}
 
-
-                    <h1 className="url">Integração via Link de Pagamento</h1>
+                <h1>Integração via Link de Pagamento</h1>
                 </div>
             </div>
 

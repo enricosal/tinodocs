@@ -76,6 +76,32 @@ export const Container = styled.div`
                     letter-spacing: .05rem;
                 }
             }
+
+            .list-area{
+                display: flex;
+
+                flex-direction: column;
+
+                .item{
+                    display: flex;
+
+                    flex-direction: row;
+
+                    align-items: center;
+
+                    margin-top: .5rem;
+
+                    margin-left: 1.8rem;
+
+                    h1{
+                        font-size: 15px;
+
+                        margin-left: .5rem;
+
+                        font-weight: 300;
+                    }
+                }
+            }
         }
     }
 `;
