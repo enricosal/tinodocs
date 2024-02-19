@@ -34,6 +34,8 @@ export default function Link() {
           "channel": "whatsapp"​
         },​
         "cart": {​
+          "address": "Rua Tino, 123, São Paulo",
+          "zipCode": "00000-000",
           "shippingCents": 1500,​
           "discountCents": 1000​
         }​
