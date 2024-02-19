@@ -11,6 +11,8 @@ import Limit from '../pages/limit';
 import Faq from '../pages/faq';
 import Invoicing from '../pages/invoicing';
 import Edit from '../pages/edit'
+import Link from '../pages/link'
+import Sdk from '../pages/sdk';
 
 export const Routes = () => {
   const location = useLocation()
@@ -26,6 +28,8 @@ export const Routes = () => {
         <Route exact path='/faq' component={ Faq } />
         <Route exact path='/billing' component={ Invoicing } />
         <Route exact path='/edit' component={Edit} />
+        <Route exact path='/payment-link' component={Link} />
+        <Route exact path='/checkout-tino' component={Sdk} />
       </Switch>
   )
 }

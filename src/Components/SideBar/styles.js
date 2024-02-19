@@ -5,12 +5,13 @@ export const Container = styled.div`
 
     flex-direction: column;
 
-    width: 245px;
     height: 88.5vh;
 
     border-right: 2px solid #2C2E39;
 
     position: sticky;
+
+    padding-right: 1rem;
 
     .Title{
         display: flex;
