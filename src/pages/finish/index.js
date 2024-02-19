@@ -2,13 +2,37 @@ import React from "react";
 import { Container } from "./styles";
 import SideBar from "../../Components/SideBar";
 
-export default function finish() {
+import warnreser from '../../assets/warnreser.png'
+
+export default function Finish() {
  return (
     <Container>
         <SideBar/>
 
         <div className="content-area">
-            
+            <h1 className="title">Finalização da compra</h1>
+
+            <h2 className="subTitle">O que acontece após o lojista finalizar a compra?</h2>
+
+            <p style={{ marginTop: '.5rem' }}>Quando a compra é finalizada com sucesso no widget, notificamos via webhook os dados da reserva de limite criada no Tino e direcionamos o lojista para a sua página de sucesso.</p>
+
+            <p className="titlep">Webhook</p>
+
+            <p style={{ marginTop: '.5rem' }}>Um webhook é uma forma do seu servidor receber notificações quando certos eventos acontecem. Assim, você pode atualizar seu banco de dados, enviar e-mails de confirmação ou realizar qualquer outra ação com base no evento.</p>
+
+            <p style={{ marginTop: '.5rem' }}>Para usar essa solução, você precisa configurar uma URL no seu servidor que possa aceitar requisições HTTP POST. Assim que o lojista completar a compra e a reserva for criada no nosso servidor, nós faremos uma request para sua URL (via servidor) cujo corpo conterá o ID do pedido (externalId) e o da reserva criada (paymentReservationId), como exemplificado abaixo:</p>
+
+            <div className="code-area">
+                <h2><text>{`{`}</text></h2>
+                <h2><text style={{ marginLeft: '1.5rem', color: "#79C0FF" }}>"type": </text> <text style={{ color: "#A5D6FF" }}> "payment_reservation_created", </text></h2>
+                <h2><text style={{ marginLeft: '1.5rem', color: "#79C0FF" }}>"data": </text> <text> {` { `} </text></h2>
+                    <h2><text style={{ marginLeft: '2.5rem', color: "#79C0FF" }}>"externalId": </text> <text style={{ color: "#A5D6FF" }}> "order-19544", </text></h2>
+                    <h2><text style={{ marginLeft: '2.5rem', color: "#79C0FF" }}>"paymentReservationId": </text> <text style={{ color: "#A5D6FF" }}> "3b161f91-391d-4278-b7e9-5cca609f1522" </text></h2>
+                <h2><text style={{ marginLeft: '1.5rem' }}> {` } `} </text></h2>
+                <h2><text>{`}`}</text></h2>
+            </div>
+
+            <img src={warnreser}/>
         </div>
     </Container>
  );

@@ -38,10 +38,11 @@ export default function SideBar() {
             <h1 className='group-title'>FLUXO DO PRODUTO</h1>
             <Option changePage={setPageSelected} newPage={'register'} page={pageSelected} title={'Cadastro'}/>
             <Option changePage={setPageSelected} newPage={'Limit'} page={pageSelected} title={'Reserva de limite'} arrow={true}/>
-            {pageSelected == 'Limit' || pageSelected == 'payment-link' || pageSelected == 'checkout-tino' ? (
+            {pageSelected == 'Limit' || pageSelected == 'payment-link' || pageSelected == 'checkout-tino' || pageSelected == 'finish' ? (
                 <div style={{ marginLeft: '1rem'}}>
                     <Option changePage={setPageSelected} newPage={'checkout-tino'} page={pageSelected} title={'Checkout tino'}/>
                     <Option changePage={setPageSelected} newPage={'payment-link'} page={pageSelected} title={'Link de Pagamento'}/>
+                    <Option changePage={setPageSelected} newPage={'finish'} page={pageSelected} title={'Finalização da compra'}/>
                 </div>
             ) : (<></>)}
             <Option changePage={setPageSelected} newPage={'Billing'} page={pageSelected} title={'Faturamento'}/>
