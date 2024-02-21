@@ -67,7 +67,7 @@ export default function Quality() {
                     </div>
                     <div className="item">
                         <MdCheckBoxOutlineBlank size={20} color="grey"/>
-                        <h1>Endpoint de envio da Nota Fiscal / Faturamento</h1>
+                        <h1>Endpoint de Cancelamento de Invoice</h1>
                     </div>
                 </div>}
             </div>
@@ -82,6 +82,42 @@ export default function Quality() {
 
                 <h1>Integração via Link de Pagamento</h1>
                 </div>
+
+                {status2 === true && 
+                <div className="list-area"> 
+                    <div className="item">
+                        <MdCheckBoxOutlineBlank size={20} color="grey"/>
+                        <h1>Integrar com API de Novos Cadastros</h1>
+                    </div>
+                    <div className="item">
+                        <MdCheckBoxOutlineBlank size={20} color="grey"/>
+                        <h1>Endpoint de validação do link</h1>
+                    </div>
+                    <div className="item">
+                        <MdCheckBoxOutlineBlank size={20} color="grey"/>
+                        <h1>Endpoint de solicitação de envio do Link de Pagamento</h1>
+                    </div>
+                    <div className="item">
+                        <MdCheckBoxOutlineBlank size={20} color="grey"/>
+                        <h1>Endpoint de Cancelamento de Reserva</h1>
+                    </div>
+                    <div className="item">
+                        <MdCheckBoxOutlineBlank size={20} color="grey"/>
+                        <h1>Endpoint de busca de Reserva de Limite (opcional)</h1>
+                    </div>
+                    <div className="item">
+                        <MdCheckBoxOutlineBlank size={20} color="grey"/>
+                        <h1>Endpoint de envio da Nota Fiscal / Faturamento</h1>
+                    </div>
+                    <div className="item">
+                        <MdCheckBoxOutlineBlank size={20} color="grey"/>
+                        <h1>Endpoint de Edição de Invoice</h1>
+                    </div>
+                    <div className="item">
+                        <MdCheckBoxOutlineBlank size={20} color="grey"/>
+                        <h1>Endpoint de Cancelamento de Invoice</h1>
+                    </div>
+                </div>}
             </div>
 
         </div>
