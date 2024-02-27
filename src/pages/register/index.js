@@ -469,7 +469,7 @@ export default function Register() {
                         <h1>{type2}</h1>
                     </div>
 
-                    <h1 className="url">https://supplier-api.truepay.app/<span style={{ fontWeight: 600 }}>v1/merchants/{`{documentNumber}`}</span></h1>
+                    <h1 className="url">https://supplier-api.truepay.app/<span style={{ fontWeight: 600 }}>v2/merchants/{`{documentNumber}`}</span></h1>
                 </div>
 
                 <h1 className="description">Verifica se o lojista está apto para usar o Tino // Verify if the merchant is able to use Tino</h1>
