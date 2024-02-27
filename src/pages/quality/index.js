@@ -43,7 +43,7 @@ export default function Quality() {
                 <div className="list-area"> 
                     <div className="item">
                         <MdCheckBoxOutlineBlank size={20} color="grey"/>
-                        <h1>Integrar com API de Novos Cadastros</h1>
+                        <h1>Endpoint de Captação de Interesse no Tino</h1>
                     </div>
                     <div className="item">
                         <MdCheckBoxOutlineBlank size={20} color="grey"/>
@@ -68,6 +68,10 @@ export default function Quality() {
                     <div className="item">
                         <MdCheckBoxOutlineBlank size={20} color="grey"/>
                         <h1>Endpoint de Cancelamento de Invoice</h1>
+                    </div>
+                    <div className="item">
+                        <MdCheckBoxOutlineBlank size={20} color="grey"/>
+                        <h1>Endpoint de Conciliação de Extrato</h1>
                     </div>
                 </div>}
             </div>
