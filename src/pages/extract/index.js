@@ -106,6 +106,10 @@ export default function Extract() {
 
                 {status === true && (
                     <div className="code-area">
+                        <h1 className="request-description">Gera um link para download do extrato contábil de um determinado período. O período máximo é de 90 dias.</h1>
+                        <h1 className="request-description">--</h1>
+                        <h1 className="request-description">Generate a link to download the accounting statement of a given period. The maximum period is 90 days.</h1>
+
                         <p className="titlep">Parameters</p>
 
                         <div className="parameters-area">
@@ -253,10 +257,10 @@ export default function Extract() {
 
             <CodeBlock>
                 <div className="header">
-                    {status === true ? 
-                    (<FiChevronDown size={24} color="#fff" onClick={() => setStatus(!status)}/>
+                    {status2 === true ? 
+                    (<FiChevronDown size={24} color="#fff" onClick={() => setStatus2(!status2)}/>
                     ) : (
-                        <FiChevronRight size={24} color="#fff" onClick={() => setStatus(!status)}/>
+                        <FiChevronRight size={24} color="#fff" onClick={() => setStatus2(!status2)}/>
                     )}
 
                     <div className="request" style={{ backgroundColor: `${color}` }}>
@@ -268,8 +272,12 @@ export default function Extract() {
 
                 <h1 className="description">Gera extrato financeiro em formato CSV // Generate financial statement in CSV format</h1>
 
-                {status === true && (
+                {status2 === true && (
                     <div className="code-area">
+                        <h1 className="request-description">Gera um link para download do extrato financeiro de um determinado período. O período máximo é de 90 dias.</h1>
+                        <h1 className="request-description">--</h1>
+                        <h1 className="request-description">Generate a link to download the financial statement of a given period. The maximum period is 90 days.</h1>
+
                         <p className="titlep">Parameters</p>
 
                         <div className="parameters-area">
