@@ -75,7 +75,7 @@ export default function Extract() {
     <Container>
         <SideBar/>
         <div className="content-area">
-            <h1 className="title">Extrato da conta</h1>
+            <h1 className="title">Extrato da conta <h2 className="subTitle" style={{ margin: 0 }}>{`(~45 minutos)`}</h2></h1>
 
             <h2 className="subTitle">Consegue realizar o download do CSV contábil e financeiro.</h2>
 

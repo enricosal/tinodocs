@@ -10,7 +10,7 @@ export default function Sdk() {
         <SideBar/>
 
         <div className="content-area">
-            <h1 className="title">Checkout Tino</h1>
+            <h1 className="title">Checkout Tino <h2 className="subTitle" style={{ margin: 0 }}>{`(~15 minutos)`}</h2></h1>
 
             <h2 className="subTitle">Tino integrado à experiência do seu e-commerce.</h2>
 

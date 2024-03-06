@@ -83,7 +83,7 @@ export default function Edit() {
     <Container>
         <SideBar/>
             <div className="content-area">
-                <h1 className="title">Edição e Cancelamento</h1>
+                <h1 className="title">Edição e Cancelamento <h2 className="subTitle" style={{ margin: 0 }}>{`(~45 minutos)`}</h2></h1>
 
                 <h2 className="subTitle">Caso seja necessário editar ou cancelar pedidos feitos com o Tino após seu faturamento.</h2>
 

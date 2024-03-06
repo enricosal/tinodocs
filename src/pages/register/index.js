@@ -80,7 +80,7 @@ export default function Register() {
     <Container>
         <SideBar/>
         <div className="content-area">
-            <h1 className="title">Cadastro</h1>
+            <h1 className="title">Cadastro <h2 className="subTitle" style={{ margin: 0 }}>{`(~25 minutos)`}</h2></h1>
 
             <h2 className="subTitle">Realiza o cadastro de novos lojistas.</h2>
 

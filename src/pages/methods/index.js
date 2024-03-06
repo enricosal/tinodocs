@@ -15,6 +15,13 @@ export default function Methods() {
         { parametro: 'customer', tipo: 'object', exemplo: 'objeto Customer', descricao: 'Objeto com dados do lojista.' },
         { parametro: 'containerElement', tipo: 'string', exemplo: 'TinoCheckoutContainer', descricao: '(opcional) Atributo id de elemento HTML onde o botão de checkout será inserido. Caso não seja provido, o valor padrão é TinoCheckoutContainer.' },
     ];
+
+    const dados2 = [
+        { parametro: 'shippingCents', tipo: 'int', exemplo: '1500', descricao: 'Valor da taxa de entrega em centavos (Ex. 12345 = R$ 123,45).' },
+        { parametro: 'discountCents', tipo: 'int', exemplo: '1000', descricao: 'Valor de desconto da compra em centavos (Ex. 12345 = R$ 123,45).' },
+        { parametro: 'items', tipo: 'array', exemplo: 'array CartItem', descricao: 'Array com dados dos itens do carrinho.' },
+    ];
+    
  return (
     <Container>
         <SideBar/>
@@ -52,6 +59,30 @@ export default function Methods() {
                 </tbody>
             </table>
 
+            <p className="titlep" style={{ marginTop: '3rem' }}>Cart</p>
+
+            <h2 className="subTitle" style={{ marginTop: '1rem' }}>Contém os dados do carrinho do cliente.</h2>
+
+            <table className="tabela">
+                <thead>
+                    <tr>
+                    <th>Parâmetro</th>
+                    <th>Tipo</th>
+                    <th>Exemplo</th>
+                    <th>Descrição</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {dados2.map((item, index) => (
+                    <tr key={index}>
+                        <td>{item.parametro}</td>
+                        <td>{item.tipo}</td>
+                        <td>{item.exemplo}</td>
+                        <td>{item.descricao}</td>
+                    </tr>
+                    ))}
+                </tbody>
+            </table>
         </div>
     </Container>
  );

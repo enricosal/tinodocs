@@ -87,7 +87,7 @@ export default function Invoicing() {
     <Container>
         <SideBar/>
         <div className="content-area">
-            <h1 className="title">Faturamento</h1>
+            <h1 className="title">Faturamento <h2 className="subTitle" style={{ margin: 0 }}>{`(~50 minutos)`}</h2></h1>
 
             <h2 className="subTitle">Necessário para confirmar a compra feita via Tino.</h2>
 
