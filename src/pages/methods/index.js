@@ -9,6 +9,7 @@ export default function Methods() {
         { parametro: 'urlCallback', tipo: 'string', exemplo: 'https://sua-loja.com.br/compra/sucesso', descricao: 'URL (com protocolo HTTPS) que o SDK vai usar para redirecionar o lojista após o pagamento ser confirmado no ambiente Tino.' },
         { parametro: 'externalId', tipo: 'string', exemplo: 'order-19544', descricao: 'ID do pedido cadastrado pelo fornecedor, normalmente gerado no ERP' },
         { parametro: 'amountCents', tipo: 'int', exemplo: '20500', descricao: 'Valor da compra (com descontos e taxas) em centavos (Ex. 12345 = R$ 123,45).' },
+        { parametro: 'maxDueDay', tipo: 'int', exemplo: '30', descricao: '(opcional) Prazo (múltiplo de 30) máximo das opções de parcelamento' },
         { parametro: 'transitionType', tipo: 'string', exemplo: 'default ou automatic', descricao: '(opcional) Define como ocorre a transição para finalizar a compra. default o usuário precisa clicar no botão de "comprar com Tino" e no automatic o clique é feito automaticamente, resultando numa experiência mais direta. ' },
         { parametro: 'openingMode', tipo: 'string', exemplo: 'blank ou self', descricao: 'Se a página de pagamento do Tino deve abrir na mesma janela do ecommerce (self) ou em uma nova (blank).' },
         { parametro: 'cart', tipo: 'object', exemplo: 'objeto Cart', descricao: 'Objeto com dados do carrinho.' },
@@ -21,7 +22,7 @@ export default function Methods() {
         { parametro: 'discountCents', tipo: 'int', exemplo: '1000', descricao: 'Valor de desconto da compra em centavos (Ex. 12345 = R$ 123,45).' },
         { parametro: 'items', tipo: 'array', exemplo: 'array CartItem', descricao: 'Array com dados dos itens do carrinho.' },
     ];
-    
+
  return (
     <Container>
         <SideBar/>

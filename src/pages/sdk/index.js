@@ -38,6 +38,7 @@ export default function Sdk() {
                         <h2><text style={{ marginLeft: '2.5rem', color: "#79C0FF" }}>urlCallback: </text> <text style={{ color: "#A5D6FF" }}> 'https://sua-loja.com.br/compra/sucesso', </text></h2>
                         <h2><text style={{ marginLeft: '2.5rem', color: "#79C0FF" }}>externalId: </text> <text style={{ color: "#A5D6FF" }}> 'order-19544', </text></h2>
                         <h2><text style={{ marginLeft: '2.5rem', color: "#79C0FF" }}>amountCents: </text> <text style={{ color: "#A5D6FF" }}> 20500, </text></h2>
+                        <h2><text style={{ marginLeft: '2.5rem', color: "#79C0FF" }}>maxDueDay: </text> <text style={{ color: "#A5D6FF" }}> 30, </text></h2>
                         <h2><text style={{ marginLeft: '2.5rem', color: "#79C0FF" }}>cart: </text> <text> {` { `} </text></h2>
                             <h2><text style={{ marginLeft: '3.5rem', color: "#79C0FF" }}>address: </text> <text style={{ color: "#A5D6FF" }}> ‘Rua Tino, 123, São Paulo’, </text></h2>
                             <h2><text style={{ marginLeft: '3.5rem', color: "#79C0FF" }}>zipCode: </text> <text style={{ color: "#A5D6FF" }}> ‘00000-00’, </text></h2>
