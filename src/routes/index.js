@@ -17,6 +17,7 @@ import Finish from '../pages/finish';
 import Quality from '../pages/quality';
 import Methods from '../pages/methods';
 import Extract from '../pages/extract';
+import Intention from '../pages/intention';
 
 export const Routes = () => {
   const location = useLocation()
@@ -38,6 +39,7 @@ export const Routes = () => {
         <Route exact path='/quality' component={Quality} />
         <Route exact path='/methods' component={Methods} />
         <Route exact path='/extract' component={Extract} />
+        <Route exact path='/intention' component={Intention} />
       </Switch>
   )
 }

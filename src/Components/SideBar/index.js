@@ -37,6 +37,7 @@ export default function SideBar() {
         <div className="group-theme">
             <h1 className='group-title'>FLUXO DO PRODUTO</h1>
             <Option changePage={setPageSelected} newPage={'register'} page={pageSelected} title={'Cadastro'}/>
+            <Option changePage={setPageSelected} newPage={'intention'} page={pageSelected} title={'Intenção de compra'}/>
             <Option changePage={setPageSelected} newPage={'Limit'} page={pageSelected} title={'Reserva de limite'} arrow={true}/>
             {pageSelected == 'Limit' || pageSelected == 'payment-link' || pageSelected == 'checkout-tino' || pageSelected == 'finish' || pageSelected == 'methods' ? (
                 <div style={{ marginLeft: '1rem'}}>
