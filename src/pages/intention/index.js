@@ -69,6 +69,10 @@ export default function Intention() {
                                     </div>
                             </div>
 
+                            <div className="divider" style={{width: '95%'}}>
+                                .
+                            </div>
+
                             <h1 className="body-title">Body</h1>
 
                     <div className="parameter-section">
