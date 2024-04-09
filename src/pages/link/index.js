@@ -12,6 +12,7 @@ import { MdCircle } from "react-icons/md";
 export default function Link() {
     const [status, setStatus] = useState(false);
     const [type, setType] = useState('POST');
+    const [type2, setType2] = useState('GET');
     const [parameterStatus, setParameterStatus] = useState(false);
     const [parameterStatus2, setParameterStatus2] = useState(false);
     const [status2, setStatus2] = useState(false);
@@ -20,6 +21,12 @@ export default function Link() {
         var color = '#006623'
     }else if(type === 'GET'){
         var color = '#2F7F98'
+    }
+
+    if(type2 === 'POST'){
+        var color2 = '#006623'
+    }else if(type2 === 'GET'){
+        var color2 = '#2F7F98'
     }
 
     const exemploJSON = `
@@ -71,6 +78,14 @@ export default function Link() {
     a valid format |
     `;
 
+    const exemploJSON3 = `
+    {
+        "amountCents": 43500,
+        "merchantDocumentNumber": "4644905000155",
+        "email": "representante@lojista.com.br"
+    }
+    `
+
  return (
     <Container>
         <SideBar/>
@@ -117,17 +132,11 @@ export default function Link() {
                 {status === true && (
                     <div className="code-area">
                         <h1 className="request-description">
-                            Faturamento de reserva de limite é a consolidação da compra do Lojista.
-                            Fazemos a captura das Notas Fiscais e criamos os pedidos no Tino conforme as informações enviadas. Só criaremos o pedido nesse momento.
-                            É importante ressaltar que o pedido será criado apenas quando a data de emissão da nota fiscal for a mesma da data de envio. Essa regra se aplica também nos casos de mais de uma Nota Fiscal.
-                            A reserva de limite é finalizada e não é mais possível utilizá-la para outro envio de Notas Fiscais.
+                        Verifica a elegibilidade do lojista antes de solicitar o envio do link de pagamento. A finalidade desse endpoint é validar se o lojista tem permissão para realizar a transação em questão com o Tino e retornar essa informação ao fornecedor. Caso o cliente seja considerado inapto, o link de pagamento não poderá ser gerado. Portanto, é essencial realizar essa validação antecipadamente.
                         </h1>
                         <h1 className="request-description">--</h1>
                         <h1 className="request-description">
-                        Billing the limit provision is the consolidation of the Merchant's purchase.
-                        We capture invoices and create orders in Tino according to the information sent. We will only create the order in this moment.
-                        It is important to notice that the order will only be created when the issuing date of the invoice is the same as the date sent to Tino. This rule also applies in cases of more than one Invoice.
-                        The limit reservation is billed and it is no longer possible to use it for sending another Invoice.
+                        Verifies the merchant's eligibility before requesting the sending of the payment link. The purpose of this endpoint is to validate if the merchant has permission to perform the transaction in question with Tino and return this information to the supplier. If the customer is considered incapable, the payment link cannot be generated. Therefore, it is essential to perform this validation in advance.
                         </h1>       
 
                         <p className="titlep">Parameters</p>
@@ -208,7 +217,7 @@ export default function Link() {
 
                         <div className="code-example">
                             <pre>
-                                {exemploJSON}
+                                {exemploJSON3}
                             </pre>
                         </div>
 
@@ -223,7 +232,7 @@ export default function Link() {
 
                                 <div className="description-error">
                                         <h1>
-                                            Status de confirmação que o lojista foi criado.
+                                            Informação se o link de pagamento é válido.
                                         </h1>
 
                                         <h1>
@@ -231,26 +240,9 @@ export default function Link() {
                                         </h1>
 
                                         <h1>
-                                            Confirmation status that the merchant was created.
+                                            Information if the payment link is valid.
                                         </h1>
                                     </div>
-                            </div>
-
-                            <div className="divider" style={{width: '95%'}}>
-                                .
-                            </div>
-
-                            <div className="error-section">
-                                <div className="error-code">
-                                    <MdCircle size={9} color="orange"/>
-                                    <h1>400: Bad Request</h1>
-                                </div>
-
-                                <div className="description-error">
-                                    <pre>
-                                        {exemploJSON2}
-                                    </pre>
-                                </div>
                             </div>
 
                             <div className="divider" style={{width: '95%'}}>
@@ -645,6 +637,130 @@ export default function Link() {
                                         {exemploJSON2}
                                     </pre>
                                 </div>
+                            </div>
+
+                            <div className="divider" style={{width: '95%'}}>
+                                .
+                            </div>
+
+                            <div className="error-section">
+                                <div className="error-code">
+                                    <MdCircle size={9} color="orange"/>
+                                    <h1>401: Unathorized</h1>
+                                </div>
+
+                                <div className="description-error">
+                                        <h1>
+                                            Api-Token válido, mas não reconhecido.
+                                        </h1>
+
+                                        <h1>
+                                            --
+                                        </h1>
+
+                                        <h1>
+                                            Api-Token is valid but not recognized.
+                                        </h1>
+                                </div>
+                            </div>
+
+                            <div className="divider" style={{width: '95%'}}>
+                                .
+                            </div>
+
+                            <div className="error-section">
+                                <div className="error-code">
+                                    <MdCircle size={9} color="red"/>
+                                    <h1>500: Internal Server Error</h1>
+                                </div>
+
+                                <div className="description-error">
+                                        <h1>
+                                            Erro interno.
+                                        </h1>
+
+                                        <h1>
+                                            --
+                                        </h1>
+
+                                        <h1>
+                                            Internal error.
+                                        </h1>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                )}
+            </CodeBlock>
+
+            <CodeBlock>
+                <div className="header">
+                    {status === true ? 
+                    (<FiChevronDown size={24} color="#fff" onClick={() => setStatus(!status)}/>
+                    ) : (
+                        <FiChevronRight size={24} color="#fff" onClick={() => setStatus(!status)}/>
+                    )}
+
+                    <div className="request" style={{ backgroundColor: `${color2}` }}>
+                        <h1>{type2}</h1>
+                    </div>
+
+                    <h1 className="url">https://supplier-api.truepay.app/<span style={{ fontWeight: 600 }}>v1/payment-links</span></h1>
+                </div>
+
+                <h1 className="description">Status do Link de pagamento gerado // Status of the generated payment link</h1>
+
+                {status === true && (
+                    <div className="code-area">    
+
+                        <p className="titlep">Parameters</p>
+
+                        <div className="parameters-area">
+                            
+                            <div className="parameter-section">
+                                    <h1 className="parameter-title">external_id*</h1>
+                            
+                                    <h1 style={{ marginLeft: '8rem' }} className="parameter-type">string</h1>
+                            
+                                    <div className="description-parameter">
+                                        <h1>
+                                            Id externo do pedido, escolhido no momento da criação do pedido.
+                                        </h1>
+
+                                        <h1>
+                                            --
+                                        </h1>
+
+                                        <h1>
+                                            External id of the order, chosen when the order was created.
+                                        </h1>
+                                    </div>
+                            </div>
+                        </div>
+
+                        <p className="titlep">Responses</p>
+
+                        <div className="error-area">
+                            <div className="error-section">
+                                <div className="error-code">
+                                    <MdCircle size={9} color="green"/>
+                                    <h1>200: OK</h1>
+                                </div>
+
+                                <div className="description-error">
+                                        <h1>
+                                            Status sobre o link de pagamento gerado.
+                                        </h1>
+
+                                        <h1>
+                                            --
+                                        </h1>
+
+                                        <h1>
+                                            status about the generated payment link.
+                                        </h1>
+                                    </div>
                             </div>
 
                             <div className="divider" style={{width: '95%'}}>

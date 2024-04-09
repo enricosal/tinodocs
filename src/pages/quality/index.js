@@ -43,6 +43,10 @@ export default function Quality() {
                 <div className="list-area"> 
                     <div className="item">
                         <MdCheckBoxOutlineBlank size={20} color="grey"/>
+                        <h1>Liberarmos o acesso a um CNPJ para testes (Time do Tino)</h1>
+                    </div>
+                    <div className="item">
+                        <MdCheckBoxOutlineBlank size={20} color="grey"/>
                         <h1>Endpoint de Captação de Interesse no Tino</h1>
                     </div>
                     <div className="item">
@@ -89,6 +93,10 @@ export default function Quality() {
 
                 {status2 === true && 
                 <div className="list-area"> 
+                    <div className="item">
+                        <MdCheckBoxOutlineBlank size={20} color="grey"/>
+                        <h1>Liberarmos o acesso a um CNPJ para testes (Time do Tino)</h1>
+                    </div>
                     <div className="item">
                         <MdCheckBoxOutlineBlank size={20} color="grey"/>
                         <h1>Integrar com API de Novos Cadastros</h1>
