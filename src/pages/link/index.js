@@ -712,7 +712,7 @@ export default function Link() {
 
                 <h1 className="description">Status do Link de pagamento gerado // Status of the generated payment link</h1>
 
-                {status === true && (
+                {status3 === true && (
                     <div className="code-area">    
 
                         <p className="titlep">Parameters</p>
