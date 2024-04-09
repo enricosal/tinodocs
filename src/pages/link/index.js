@@ -16,6 +16,7 @@ export default function Link() {
     const [parameterStatus, setParameterStatus] = useState(false);
     const [parameterStatus2, setParameterStatus2] = useState(false);
     const [status2, setStatus2] = useState(false);
+    const [status3, setStatus3] = useState(false);
 
     if(type === 'POST'){
         var color = '#006623'
@@ -696,10 +697,10 @@ export default function Link() {
 
             <CodeBlock>
                 <div className="header">
-                    {status === true ? 
-                    (<FiChevronDown size={24} color="#fff" onClick={() => setStatus(!status)}/>
+                    {status3 === true ? 
+                    (<FiChevronDown size={24} color="#fff" onClick={() => setStatus3(!status3)}/>
                     ) : (
-                        <FiChevronRight size={24} color="#fff" onClick={() => setStatus(!status)}/>
+                        <FiChevronRight size={24} color="#fff" onClick={() => setStatus3(!status3)}/>
                     )}
 
                     <div className="request" style={{ backgroundColor: `${color2}` }}>
