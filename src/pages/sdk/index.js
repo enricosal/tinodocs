@@ -34,7 +34,7 @@ export default function Sdk() {
             <div className="code-area">
                 <h2><text style={{ color: "Chartreuse" }}>{`<script`}</text></h2>
                     <h2 style={{ marginLeft: '1.5rem' }}><text>window.tino.<text style={{ color: 'Plum' }}>init</text>{`({`}</text></h2>
-                        <h2><text style={{ marginLeft: '2.5rem', color: "#79C0FF" }}>"x-api-key": </text> <text style={{ color: "#A5D6FF" }}> "sua_api_key", </text></h2>
+                        <h2><text style={{ marginLeft: '2.5rem', color: "#79C0FF" }}>"api-key": </text> <text style={{ color: "#A5D6FF" }}> "sua_api_key", </text></h2>
                         <h2><text style={{ marginLeft: '2.5rem', color: "#79C0FF" }}>urlCallback: </text> <text style={{ color: "#A5D6FF" }}> 'https://sua-loja.com.br/compra/sucesso', </text></h2>
                         <h2><text style={{ marginLeft: '2.5rem', color: "#79C0FF" }}>externalId: </text> <text style={{ color: "#A5D6FF" }}> 'order-19544', </text></h2>
                         <h2><text style={{ marginLeft: '2.5rem', color: "#79C0FF" }}>amountCents: </text> <text style={{ color: "#A5D6FF" }}> 20500, </text></h2>
