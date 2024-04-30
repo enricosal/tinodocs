@@ -113,7 +113,7 @@ export default function Extract() {
                         <p className="titlep">Parameters</p>
 
                         <div className="parameters-area">
-                            <h1 className="body-title">Body</h1>
+                            <h1 className="body-title">Path</h1>
 
                             <div className="parameter-section">
                                     <h1 className="parameter-title">start_date*</h1>
@@ -281,7 +281,7 @@ export default function Extract() {
                         <p className="titlep">Parameters</p>
 
                         <div className="parameters-area">
-                            <h1 className="body-title">Body</h1>
+                            <h1 className="body-title">Path</h1>
 
                             <div className="parameter-section">
                                     <h1 className="parameter-title">start_date*</h1>
